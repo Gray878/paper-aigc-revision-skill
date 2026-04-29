@@ -1,0 +1,42 @@
+{
+  "name": "chinese-paper-aigc-revision",
+  "version": "2.0.0",
+  "date": "2026-04-29",
+  "artifacts": [
+    {
+      "file": "chinese-paper-aigc-revision-claude.zip",
+      "bytes": 17876,
+      "sha256": "de8bb332d32725d793b2bd210b0c618ded8a99f2e0ff8a61856b1c52341e2d53"
+    },
+    {
+      "file": "chinese-paper-aigc-revision-openai-codex.zip",
+      "bytes": 17876,
+      "sha256": "de8bb332d32725d793b2bd210b0c618ded8a99f2e0ff8a61856b1c52341e2d53"
+    },
+    {
+      "file": "chinese-paper-aigc-revision.zip",
+      "bytes": 17876,
+      "sha256": "de8bb332d32725d793b2bd210b0c618ded8a99f2e0ff8a61856b1c52341e2d53"
+    },
+    {
+      "file": "chatgpt-gpts-instructions.md",
+      "bytes": 25779,
+      "sha256": "63671dc478ab541cb07c327bb6fa92ab88a6a71127451e126dad16cd842f313c"
+    },
+    {
+      "file": "install-snippets.md",
+      "bytes": 1510,
+      "sha256": "36248f2b48f0cac41ffa9adeb0d1618d2ff002bed2fc9a720c6934eff760e16d"
+    },
+    {
+      "file": "chinese-paper-aigc-revision-chatgpt-kit.zip",
+      "bytes": 22908,
+      "sha256": "baf7200c5052811b6032048e40e7b606c66b1546c2b57e07f21d016686393715"
+    },
+    {
+      "file": "chinese-paper-aigc-revision-all-platforms.zip",
+      "bytes": 86030,
+      "sha256": "bd980cb7ca3212ac27e80d7aa56ed0fad04acf2ed494e9cdf34028f89e15ffc6"
+    }
+  ]
+}

@@ -2,9 +2,9 @@
 
 [English](README.en.md)
 
-用于中文论文 AIGC 报告复核与合规修订的 Agent Skill。
+一个帮中文论文降 AIGC、去“AI 味”的 Agent Skill。
 
-这个仓库不是应用程序或普通脚本库。核心文件是：
+它可以直接看论文，也可以结合检测报告一起处理。核心文件是：
 
 ```text
 skills/chinese-paper-aigc-revision/SKILL.md
@@ -12,15 +12,15 @@ skills/chinese-paper-aigc-revision/SKILL.md
 
 ## 功能
 
-- 解读知网、维普、万方、Turnitin 等 AIGC 检测报告。
-- 解释困惑度、突发度、概率秩、分类器等检测信号可能对应的文本问题。
-- 定位高风险段落中的真实缺陷：模板化表达、弱证据、方法缺口、引用风险、逻辑跳跃、风格过度均匀。
-- 将“降 AIGC”请求转为合规修订：补充真实研究材料、重建证据链、核验引用、保留作者责任。
-- 生成修改依据、复核说明、AI 使用披露草稿和多平台发布包。
+- 看懂知网、维普、万方、Turnitin 等 AIGC 检测报告。
+- 没有检测报告时，直接从论文文本里找“AI 味”重的地方。
+- 识别常见问题：空话套话、模板化表达、证据不足、方法写得太空、引用关系不清、整段太平。
+- 把段落改得更像作者自己写的：更具体、更有材料支撑、更有研究痕迹。
+- 在需要时补充修改依据、复核说明和 AI 使用披露草稿。
 
 ## 边界
 
-这个 skill 不承诺检测分数，也不提供绕过检测的方法。
+这个 skill 不是绕检测工具，不承诺具体分数。
 
 不会做：
 
@@ -30,32 +30,26 @@ skills/chinese-paper-aigc-revision/SKILL.md
 
 会做：
 
-- 把 AIGC 分数当作复核线索，而不是学术不端结论。
-- 把高风险表达还原为具体写作问题。
-- 用用户提供的真实材料补强论文的论证链。
+- 把“降 AIGC”转成真正的论文优化。
+- 把高风险表达拆成具体写作问题。
+- 用你提供的真实材料补强论文内容。
 - 对无法核验的信息标注 `[待核验]`。
 
 ## 安装
 
-安装到 Codex：
+最简单的安装命令：
 
 ```bash
-npx skills add Gray878/paper-aigc-revision-skill --skill chinese-paper-aigc-revision -a codex -g
+npx skills add Gray878/paper-aigc-revision-skill
 ```
 
-安装到 Claude Code：
+如果你已经 clone 到本地，也可以：
 
 ```bash
-npx skills add Gray878/paper-aigc-revision-skill --skill chinese-paper-aigc-revision -a claude-code -g
+npx skills add ./skills/chinese-paper-aigc-revision
 ```
 
-从本地仓库安装：
-
-```bash
-npx skills add ./skills/chinese-paper-aigc-revision -a codex -g
-```
-
-如果使用 ChatGPT / GPTs，请使用 `dist/` 中的 instructions kit：
+如果要给 ChatGPT / GPTs 用，再看 `dist/` 里的 instructions kit：
 
 ```text
 dist/chinese-paper-aigc-revision-chatgpt-kit.zip
@@ -73,7 +67,7 @@ Use $chinese-paper-aigc-revision to interpret my Chinese thesis AIGC report, exp
 中文调用：
 
 ```text
-使用 chinese-paper-aigc-revision 处理我的中文论文 AIGC 检测报告。请先解释报告字段和检测信号，再逐段诊断高风险原因，最后给出合规修订稿、需要我补充的材料和学术诚信检查清单。
+使用 chinese-paper-aigc-revision 帮我优化这篇中文论文，重点帮我降 AIGC、去 AI 味。请直接找出空话套话、模板化表达、证据不足、方法细节不够和风格过于均匀的地方，并给出修改稿、修改依据和需要我补充的真实材料。
 ```
 
 建议同时提供：
@@ -103,7 +97,7 @@ skills/chinese-paper-aigc-revision/
 
 ## 构建发布包
 
-重新生成 `dist/` 中的 Claude、Codex、ChatGPT/GPTs 发布产物：
+重新生成 `dist/` 中的发布文件：
 
 ```bash
 python skills/chinese-paper-aigc-revision/scripts/build_release.py
@@ -119,4 +113,4 @@ python skills/chinese-paper-aigc-revision/scripts/build_release.py
 
 ## 参考资料
 
-主要依据整理在 `skills/chinese-paper-aigc-revision/references/sources.md`，包括 GLTR、DetectGPT、LLM-generated text detection survey、Turnitin AI writing detection guide、中文 AIGC 检测平台说明和学术出版 AIGC 使用边界指南。
+参考依据整理在 `skills/chinese-paper-aigc-revision/references/sources.md`，包括检测原理、平台说明和学术使用边界资料。

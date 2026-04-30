@@ -2,9 +2,9 @@
 
 [中文](README.md)
 
-An Agent Skill for reviewing Chinese academic-paper AIGC reports and revising high-risk sections in an academically responsible way.
+A skill for reducing AIGC risk and removing the "AI-sounding" feel from Chinese academic papers.
 
-This repository is not an app or a general-purpose script package. The installable skill starts here:
+It can work from a detection report or directly from the paper text. The installable skill starts here:
 
 ```text
 skills/chinese-paper-aigc-revision/SKILL.md
@@ -12,15 +12,15 @@ skills/chinese-paper-aigc-revision/SKILL.md
 
 ## What It Does
 
-- Interprets AIGC reports from CNKI, VIP, Wanfang, Turnitin, and similar systems.
-- Explains detection signals such as perplexity, burstiness, probability ranks, probability curvature, classifiers, and report artifacts.
-- Diagnoses the real writing problems behind high-risk passages: generic claims, template structure, weak evidence, method gaps, citation risk, logic jumps, and overly uniform style.
-- Turns "lower my AIGC score" requests into compliant revision work: add real research material, rebuild evidence chains, verify citations, and preserve author responsibility.
-- Produces revision rationales, review notes, AI-use disclosure drafts, and release packages for multiple agent platforms.
+- Reads AIGC reports from CNKI, VIP, Wanfang, Turnitin, and similar systems.
+- Works without a report by checking the paper text directly for heavy AI-sounding patterns.
+- Finds common problems: generic claims, template phrasing, weak evidence, thin methods, unclear citation relationships, and overly even style.
+- Rewrites passages so they feel more author-grounded, more specific, and better supported by real material.
+- Produces revision notes, review explanations, and AI-use disclosure drafts when needed.
 
 ## Boundaries
 
-This skill does not promise detection scores and does not provide detector-evasion methods.
+This is not a detector-evasion tool and does not promise any score.
 
 It will not:
 
@@ -30,29 +30,23 @@ It will not:
 
 It will:
 
-- Treat AIGC scores as review signals, not misconduct conclusions.
-- Translate high-risk signals into concrete writing and evidence problems.
+- Turn "lower my AIGC score" into real paper improvement work.
+- Translate high-risk passages into concrete writing problems.
 - Strengthen the paper with user-provided research material.
 - Mark unverifiable information as `[待核验]`.
 
 ## Installation
 
-Install for Codex:
+Simplest install command:
 
 ```bash
-npx skills add Gray878/paper-aigc-revision-skill --skill chinese-paper-aigc-revision -a codex -g
+npx skills add Gray878/paper-aigc-revision-skill
 ```
 
-Install for Claude Code:
+If you already cloned the repo locally:
 
 ```bash
-npx skills add Gray878/paper-aigc-revision-skill --skill chinese-paper-aigc-revision -a claude-code -g
-```
-
-Install from a local clone:
-
-```bash
-npx skills add ./skills/chinese-paper-aigc-revision -a codex -g
+npx skills add ./skills/chinese-paper-aigc-revision
 ```
 
 For ChatGPT / GPTs, use the instructions kit in `dist/`:
@@ -73,7 +67,7 @@ Use $chinese-paper-aigc-revision to interpret my Chinese thesis AIGC report, exp
 Chinese prompt:
 
 ```text
-使用 chinese-paper-aigc-revision 处理我的中文论文 AIGC 检测报告。请先解释报告字段和检测信号，再逐段诊断高风险原因，最后给出合规修订稿、需要我补充的材料和学术诚信检查清单。
+使用 chinese-paper-aigc-revision 帮我优化这篇中文论文，重点帮我降 AIGC、去 AI 味。请直接找出空话套话、模板化表达、证据不足、方法细节不够和风格过于均匀的地方，并给出修改稿、修改依据和需要我补充的真实材料。
 ```
 
 Useful inputs:
@@ -103,7 +97,7 @@ skills/chinese-paper-aigc-revision/
 
 ## Build Release Packages
 
-Regenerate the Claude, Codex, and ChatGPT/GPTs artifacts in `dist/`:
+Regenerate the release artifacts in `dist/`:
 
 ```bash
 python skills/chinese-paper-aigc-revision/scripts/build_release.py
@@ -119,4 +113,4 @@ Generated files include:
 
 ## References
 
-The source map is maintained in `skills/chinese-paper-aigc-revision/references/sources.md`. It includes GLTR, DetectGPT, LLM-generated text detection surveys, the Turnitin AI writing detection guide, public notes from Chinese AIGC detection platforms, and academic publishing guidance on responsible AIGC use.
+The source map is maintained in `skills/chinese-paper-aigc-revision/references/sources.md`. It includes detection-method references, platform notes, and guidance on responsible academic AI use.

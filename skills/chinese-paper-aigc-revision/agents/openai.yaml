@@ -1,4 +1,4 @@
 interface:
   display_name: "中文论文AIGC合规修订"
-  short_description: "解读中文论文AIGC报告，重建证据链并核验引用。"
-  default_prompt: "Use $chinese-paper-aigc-revision to interpret my Chinese thesis AIGC report, revise high-risk sections ethically, and prepare citation checks and disclosure notes."
+  short_description: "复核AIGC报告，重建作者证据链并准备披露说明。"
+  default_prompt: "Use $chinese-paper-aigc-revision to interpret my Chinese thesis AIGC report, explain detection signals, revise high-risk sections ethically, and prepare citation checks and disclosure notes."

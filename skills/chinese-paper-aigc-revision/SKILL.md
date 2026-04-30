@@ -1,6 +1,6 @@
 ---
 name: chinese-paper-aigc-revision
-description: Revise Chinese academic papers with ethical AIGC report interpretation, CNKI/VIP/Wanfang triage, citation checks, author-evidence reconstruction, AI-use disclosure, and GPT/Claude packaging.
+description: Revise Chinese academic papers by ethically interpreting AIGC detection reports and AI-detection signals. Use when Codex needs to handle CNKI/VIP/Wanfang/Turnitin reports, diagnose false-positive risks, respond to "降 AIGC/去 AIGC/AI 痕迹/人类化" requests without evasion, reconstruct author evidence, verify citations, prepare AI-use disclosure, or package GPT/Claude/Codex skill releases.
 ---
 
 # 中文论文 AIGC 合规修订
@@ -21,6 +21,7 @@ description: Revise Chinese academic papers with ethical AIGC report interpretat
 
 ## 任务路由
 
+- 用户要求“去 AIGC”“降 AI 痕迹”“人类化”或讨论困惑度/突发度：先读取 `references/detection-logic.md`，把目标转译为合规复核、证据链重建和披露准备。
 - 解释 AIGC 检测原理或误判风险：读取 `references/detection-logic.md`。
 - 处理知网、维普、万方、Turnitin 等检测报告：读取 `references/platform-report-guide.md`。
 - 做段落、章节或全篇修订：读取 `references/revision-playbook.md`，必要时读取 `references/rewrite-patterns.md`。
@@ -30,11 +31,12 @@ description: Revise Chinese academic papers with ethical AIGC report interpretat
 ## 工作流程
 
 1. 采集上下文：论文类型、学科、学校/期刊政策、目标章节、检测报告、用户真实研究材料。
-2. 诊断风险：按 `generic claim`、`template structure`、`weak evidence`、`citation risk`、`method gap`、`logic jump`、`style uniformity`、`report artifact` 标注。
-3. 重建原创性：优先加入真实的研究问题、样本/数据、方法选择、观察记录、案例细节、限制条件和作者判断。
-4. 再做语言修订：保持学科术语稳定，减少模板化连接词，让句段结构服从论证逻辑。
-5. 核验引用和事实：不能确认的来源、数据、政策、机构事实一律标 `[待核验]`。
-6. 二次验收：检查是否引入虚构信息、是否有证据支撑、是否保留作者责任、是否能生成修改记录和披露说明。
+2. 解释检测信号：把困惑度、突发度、概率秩、扰动曲率、分类器、报告伪影等说明为风险线索，不把它们当作可反推的绕检公式。
+3. 诊断风险：按 `generic claim`、`template structure`、`weak evidence`、`citation risk`、`method gap`、`logic jump`、`style uniformity`、`report artifact` 标注。
+4. 重建原创性：优先加入真实的研究问题、样本/数据、方法选择、观察记录、案例细节、限制条件和作者判断。
+5. 再做语言修订：保持学科术语稳定，减少模板化连接词，让句段结构服从论证逻辑。
+6. 核验引用和事实：不能确认的来源、数据、政策、机构事实一律标 `[待核验]`。
+7. 二次验收：检查是否引入虚构信息、是否有证据支撑、是否保留作者责任、是否能生成修改记录和披露说明。
 
 ## 输出格式
 
@@ -53,6 +55,7 @@ description: Revise Chinese academic papers with ethical AIGC report interpretat
 
 ```markdown
 ## 报告字段解读
+## 检测信号与误判风险
 ## 高风险片段表
 ## 分段修订方案
 ## 需要作者提供的材料

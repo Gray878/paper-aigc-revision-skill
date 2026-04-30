@@ -1,6 +1,6 @@
 # 来源依据与可追溯说明
 
-访问日期：2026-04-29。来源可能更新；涉及学校、期刊或平台政策时，应以用户提交时的最新官方说明为准。
+访问日期：2026-04-30。来源可能更新；涉及学校、期刊或平台政策时，应以用户提交时的最新官方说明为准。
 
 ## Agent Skills 格式
 
@@ -23,6 +23,9 @@
 
 - Wu, J. et al. (2023/2024). **A Survey on LLM-Generated Text Detection: Necessity, Methods, and Future Directions**. arXiv: `2310.14724`, `https://arxiv.org/abs/2310.14724`  
   要点：检测方法包括水印、统计检测、神经分类器和人工辅助等，检测问题会随模型发展而变化。
+
+- Sadasivan, V. S. et al. (2023). **Can AI-Generated Text be Reliably Detected?** arXiv: `2303.11156`, `https://arxiv.org/abs/2303.11156`  
+  要点：讨论检测在现实场景中的可靠性和鲁棒性限制；用于提醒不要把检测信号当作可反推的固定规则，也不要单靠分数定性。
 
 - Liang, W. et al. (2023). **GPT detectors are biased against non-native English writers**. Patterns, 4(7), 100779. DOI: `10.1016/j.patter.2023.100779`, `https://www.sciencedirect.com/science/article/pii/S2666389923001307`  
   要点：检测器可能对非母语作者产生误判风险，说明检测结果不宜单独作为处分依据。
